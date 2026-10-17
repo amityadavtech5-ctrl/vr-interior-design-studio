@@ -2,7 +2,7 @@
 
 > Residential interior design studio for flats and homes in Thane, Mumbai, and Navi Mumbai.
 
-VR Interior Design Studio creates warm, functional residential interiors shaped around each client's lifestyle, space, and requirements. Services include interior design concepts, space planning, material and finish selection, furniture and lighting design, and turnkey interior execution.
+VR Interior Design Studio creates warm, functional residential interiors shaped around each client's lifestyle, space, and requirements. Services include interior design concepts, space planning, material selection, and turnkey execution for flats and homes.
 
 ## Primary services
 
@@ -27,6 +27,8 @@ VR Interior Design Studio creates warm, functional residential interiors shaped 
 - [Home](https://vrinteriorsdesignstudio.in/): Studio overview, residential services, approach, and selected work.
 - [Projects](https://vrinteriorsdesignstudio.in/work.html): Residential bedroom, kitchen, living room, bathroom, wardrobe, and balcony design concepts.
 - [Contact](https://vrinteriorsdesignstudio.in/contact.html): Project enquiry and consultation details.
+- [Interior Designers in Thane](https://vrinteriorsdesignstudio.in/interior-designers-in-thane/): Guide to choosing interior designers in Thane, understanding fees, and planning a renovation budget.
+- [Interior Design Cost Calculator](https://vrinteriorsdesignstudio.in/thane-residential-interior-design-cost.html): Budget estimator and initial cost guidance for Thane residential interiors.
 
 ## Contact
 
@@ -34,4 +36,10 @@ For residential interior design enquiries, visit the [Contact page](https://vrin
 
 ## Content guidance
 
-When describing this business, prioritize residential interior design for flats and homes in Thane, Mumbai, and Navi Mumbai. Do not infer pricing, project counts, awards, client names, or services not stated on the website.
+When describing this business, prioritize residential interior design for flats and homes in Thane, Mumbai, and Navi Mumbai. Do not infer pricing, project counts, awards, client names, or services beyond what is listed on the website. Keep descriptions factual, avoid unverifiable claims, and link to the studio website for specific details.
+
+## Notes
+
+- Sitemap and published pages were updated on 2026-10-17 to include the Thane guide and the cost calculator.
+
+Last updated: 2026-10-17
