@@ -68,7 +68,7 @@
         "name": "How long can a renovation take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This calculator estimates 4–6 weeks for areas below 800 sq. ft., 6–8 weeks for areas from 800 to below 1,300 sq. ft., and 8–12 weeks for areas of 1,300 sq. ft. or more. Actual timelines depend on project scope and site conditions."
+          "text": "This calculator estimates 4–6 weeks for areas below 800 sq. ft., 6–8 weeks for areas from 800 to below 1,300 sq. ft., and 8–12 weeks for areas of 1,300 sq. ft. or more. Actual timelines vary by scope and site."
         }
       }
     ]
@@ -105,7 +105,7 @@
       -webkit-font-smoothing: antialiased;
     }
     .page-shell { width: min(100% - 32px, 1040px); margin: 0 auto; padding: 48px 0 64px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--primary); font-size: .76rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--primary); font-size: .76rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase;}
     .eyebrow::before { content: ""; display: inline-block; width: 22px; height: 2px; background: currentColor; }
     .page-header { max-width: 760px; margin-bottom: 28px; }
     h1 { max-width: 760px; margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.08; letter-spacing: -.045em; font-weight: 760; }
@@ -114,8 +114,8 @@
     .estimate-summary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 23px 25px; border-bottom: 1px solid var(--line); }
     .estimate-label, .metric-label { display: block; color: var(--muted); font-size: .78rem; font-weight: 650; }
     .estimate-label { margin-bottom: 4px; }
-    .estimate-total { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: clamp(1.45rem, 3.5vw, 1.8rem); line-height: 1.25; font-weight: 760; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
-    .tier-badge { display: inline-flex; align-items: center; padding: 5px 10px; border: 1px solid #c9e7d4; border-radius: 999px; background: var(--success-bg); color: var(--success); font-size: .72rem; font-weight: 700; letter-spacing: 0; white-space: nowrap; }
+    .estimate-total { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: clamp(1.45rem, 3.5vw, 1.8rem); line-height: 1.25; font-weight: 760; letter-spacing: -.035em; }
+    .tier-badge { display: inline-flex; align-items: center; padding: 5px 10px; border: 1px solid #c9e7d4; border-radius: 999px; background: var(--success-bg); color: var(--success); font-size: .85rem; }
     .metrics { display: flex; gap: 28px; padding-left: 24px; border-left: 1px solid var(--line); }
     .metric-value { display: block; margin-top: 3px; font-size: .95rem; font-weight: 720; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .breakdown { padding: 22px 25px 24px; border-bottom: 1px solid var(--line); }
@@ -136,8 +136,8 @@
     .field { min-width: 0; }
     .field label, .field-label { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 9px; color: var(--muted); font-size: .83rem; font-weight: 650; }
     .select-wrap { position: relative; }
-    select { width: 100%; min-height: 47px; appearance: none; padding: 0 42px 0 13px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; }
-    .select-wrap::after { content: ""; position: absolute; top: 18px; right: 16px; width: 8px; height: 8px; border-right: 1.7px solid var(--muted); border-bottom: 1.7px solid var(--muted); transform: rotate(45deg); pointer-events: none; }
+    select { width: 100%; min-height: 47px; appearance: none; padding: 0 42px 0 13px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); font: inherit; }
+    .select-wrap::after { content: ""; position: absolute; top: 18px; right: 16px; width: 8px; height: 8px; border-right: 1.7px solid var(--muted); border-bottom: 1.7px solid var(--muted); transform: rotate(45deg); }
     select:focus-visible, input:focus-visible { outline: 3px solid rgba(39, 108, 88, .23); outline-offset: 2px; }
     .area-number { color: var(--ink); font-size: .9rem; font-weight: 740; font-variant-numeric: tabular-nums; white-space: nowrap; }
     input[type="range"] { display: block; width: 100%; margin: 15px 0 5px; accent-color: var(--primary); cursor: pointer; }
@@ -169,22 +169,25 @@
   </style>
 </head>
 <body>
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="VR Interior Design Studio home">VR Interior Design Studio</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav" id="site-nav" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="work.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-  <main class="page-shell">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="sitebar" role="banner">
+    <div class="shell sitebar-inner">
+      <a class="brand" href="index.html" aria-label="VR Interior Design Studio home">VR Interior Design Studio</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="work.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
     <header class="page-header">
       <p class="eyebrow">VR Interior Design Studio · Thane</p>
       <h1>Home Interior Design Cost Calculator</h1>
-      <p class="lede">Explore an indicative turnkey renovation budget for your Thane home. Choose your BHK layout, adjust carpet area, and compare material finish levels to see the estimated cost and category-wise breakdown update instantly.</p>
+      <p class="lede">Explore an indicative turnkey renovation budget for your Thane home. Choose your BHK layout, adjust carpet area, and compare material finish levels to see the estimated cost range and timeline.</p>
     </header>
 
     <section class="calculator" aria-label="Interactive home renovation cost calculator">
@@ -249,12 +252,12 @@
         </div>
         <p class="tier-note" id="tierNote"><strong>Thane Premium:</strong> Includes acrylic finishes, quartz counters, false ceilings, and ambient lighting. Pricing is an indicative planning estimate for residential interiors in the Thane area.</p>
       </div>
-      <p class="estimate-disclaimer">This calculator provides an indicative budget, not a binding quotation. Final pricing and timelines depend on the agreed scope, site conditions, material selections, measurements, and project requirements.</p>
+      <p class="estimate-disclaimer">This calculator provides an indicative budget, not a binding quotation. Final pricing and timelines depend on the agreed scope, site conditions, material selection and written quotation.</p>
     </section>
 
     <section class="content-section" aria-labelledby="about-heading">
       <h2 id="about-heading">Plan your Thane home renovation budget</h2>
-      <p>This interior design cost calculator helps you compare estimated turnkey costs for 1 BHK, 2 BHK, 3 BHK, and 4 BHK homes. Change the carpet area and finish tier to understand how those choices affect the planning estimate. The category breakdown is an illustrative budget allocation; confirm inclusions, specifications, taxes, and site conditions with your designer before committing to a project.</p>
+      <p>This interior design cost calculator helps you compare estimated turnkey costs for 1 BHK, 2 BHK, 3 BHK, and 4 BHK homes. Change the carpet area and finish tier to understand how those choices affect the indicative cost and timeline.</p>
     </section>
 
     <section class="content-section" aria-labelledby="faq-heading">
@@ -262,7 +265,7 @@
       <div class="faq-list">
         <details>
           <summary>How is the turnkey renovation estimate calculated?</summary>
-          <p>The estimate multiplies your selected carpet area by the selected finish tier rate and applies a 5% logistics adjustment. It is an indicative planning estimate, not a final quotation.</p>
+          <p>The estimate multiplies your selected carpet area by the selected finish tier rate and applies a 5% logistics adjustment. It is an indicative planning estimate, not a final quotation and should be verified with a site visit.</p>
         </details>
         <details>
           <summary>What affects the interior design cost?</summary>
@@ -270,11 +273,15 @@
         </details>
         <details>
           <summary>How long can a renovation take?</summary>
-          <p>The calculator estimates 4–6 weeks for areas below 800 sq. ft., 6–8 weeks for areas from 800 to below 1,300 sq. ft., and 8–12 weeks for areas of 1,300 sq. ft. or more. Actual timelines depend on the confirmed project scope and site conditions.</p>
+          <p>The calculator estimates 4–6 weeks for areas below 800 sq. ft., 6–8 weeks for areas from 800 to below 1,300 sq. ft., and 8–12 weeks for areas of 1,300 sq. ft. or more. Actual timelines vary with scope and site readiness.</p>
         </details>
       </div>
     </section>
-    <footer>VR Interior Design Studio · Thane, Maharashtra. All figures are planning estimates and should be verified against a project-specific quotation.</footer>
+    <footer class="footer footer-inner" aria-label="Site footer">
+      <div class="shell footer-inner">
+        VR Interior Design Studio · Thane, Maharashtra. All figures are planning estimates and should be verified against a project-specific quotation.
+      </div>
+    </footer>
   </main>
 
   <script>
