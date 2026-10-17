@@ -55,62 +55,62 @@
   }
   </script>
   <style>
-    :root{color-scheme:light;--ink:#202b28;--muted:#596662;--paper:#f7f4ee;--card:#fffefa;--line:#deded4;--green:#234b3e;--green2:#2f6551;--gold:#bd9662;--soft:#e8eee8;--max:1120px}
+    :root{color-scheme:light;--bg:#f6f2ea;--bg-alt:#ebe3d7;--surface:#fffdf9;--text:#24211e;--muted:#625d56;--dark:#24211e;--border:#d8d0c4;--accent:#9b7449;--accent-dark:#6f5133;--accent-light:#ead8bc;--white:#fff;--container:1180px;--radius:8px;--shadow:0 18px 50px rgba(38, 32, 25, .10)}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:24px}
-    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:var(--green);text-underline-offset:3px}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--accent);text-underline-offset:3px}
     a:hover{text-decoration-thickness:2px}
-    a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-    .skip{position:absolute;left:-9999px;top:8px;padding:10px;background:#fff;z-index:10}.skip:focus{left:8px}
-    .shell{width:min(calc(100% - 36px),var(--max));margin:0 auto}
-    .sitebar{border-bottom:1px solid var(--line);background:rgba(255,254,250,.9)}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent-light);outline-offset:3px}
+    .skip{position:absolute;left:-9999px;top:8px;padding:10px;background:var(--white);z-index:10}.skip:focus{left:8px}
+    .shell{width:min(calc(100% - 36px),var(--container));margin:0 auto}
+    .sitebar{border-bottom:1px solid var(--border);background:rgba(255,253,249,.9)}
     .sitebar-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:.88rem;font-weight:800;letter-spacing:.09em}
-    .brand-mark{display:grid;place-items:center;width:34px;height:34px;background:var(--green);color:white;border-radius:50%;font-family:Georgia,serif;font-size:1rem;letter-spacing:0}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-size:.88rem;font-weight:800;letter-spacing:.09em}
+    .brand-mark{display:grid;place-items:center;width:34px;height:34px;background:var(--accent);color:var(--white);border-radius:50%;font-family:Georgia,serif;font-size:1rem;letter-spacing:0}
     .toplink{font-size:.9rem;font-weight:700;text-decoration:none}
-    .hero{padding:70px 0 44px;background:radial-gradient(ellipse at 90% 15%,rgba(189,150,98,.19),transparent 33%),linear-gradient(180deg,#f7f4ee,#f0efe7)}
-    .eyebrow{font-size:.77rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--green2)}
+    .hero{padding:70px 0 44px;background:radial-gradient(ellipse at 90% 15%,var(--accent-light) 0%,transparent 33%),linear-gradient(180deg,var(--bg),var(--bg-alt))}
+    .eyebrow{font-size:.77rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-dark)}
     h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.18;letter-spacing:-.025em}
     h1{font-size:clamp(2.35rem,5vw,4.5rem);max-width:900px;margin:14px 0 20px;font-weight:500}
-    .hero p{font-size:clamp(1.05rem,1.8vw,1.22rem);max-width:780px;color:#45524e;margin:0 0 26px}
+    .hero p{font-size:clamp(1.05rem,1.8vw,1.22rem);max-width:780px;color:var(--muted);margin:0 0 26px}
     .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 20px;border-radius:999px;background:var(--green);color:#fff;font-weight:750;text-decoration:none;border:1px solid var(--green);transition:transform .15s ease,background .15s ease}
-    .btn:hover{background:#17392e;transform:translateY(-1px);text-decoration:none}
-    .btn-secondary{background:transparent;color:var(--green)}.btn-secondary:hover{background:var(--soft);color:var(--green)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 20px;border-radius:999px;background:var(--accent);color:var(--white);font-weight:750;text-decoration:none;border:1px solid transparent}
+    .btn:hover{background:var(--accent-dark);transform:translateY(-1px);text-decoration:none}
+    .btn-secondary{background:transparent;color:var(--accent)}.btn-secondary:hover{background:var(--bg-alt);color:var(--accent)}
     .hero-note{font-size:.85rem;color:var(--muted);margin-top:12px}
     .content-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:42px;align-items:start;padding:45px 0 76px}
-    .toc{position:sticky;top:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-    .toc h2{font:800 .78rem/1.3 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:var(--green)}
+    .toc{position:sticky;top:24px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px}
+    .toc h2{font:800 .78rem/1.3 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
     .toc ol{padding-left:19px;margin:0}.toc li{padding:5px 0;font-size:.9rem;line-height:1.45}.toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
-    article{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,48px);box-shadow:0 10px 40px rgba(35,57,45,.035)}
+    article{min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:clamp(22px,4vw,48px);box-shadow:var(--shadow)}
     article h2{font-size:clamp(1.7rem,3vw,2.35rem);margin:48px 0 16px}
     article h2:first-child{margin-top:0}
     article h3{font-size:1.35rem;margin:26px 0 8px}
-    article p{margin:0 0 17px;color:#394541}
+    article p{margin:0 0 17px;color:var(--dark)}
     article ul,article ol{padding-left:24px;margin:12px 0 22px}
-    article li{padding-left:4px;margin:7px 0;color:#394541}
-    .lead{font-size:1.12rem;color:#34413c}
-    .note-box{background:var(--soft);border-left:4px solid var(--green2);padding:17px 20px;border-radius:0 12px 12px 0;margin:24px 0;color:#2c3d35}
+    article li{padding-left:4px;margin:7px 0;color:var(--dark)}
+    .lead{font-size:1.12rem;color:var(--dark)}
+    .note-box{background:var(--bg-alt);border-left:4px solid var(--accent-dark);padding:17px 20px;border-radius:0 12px 12px 0;margin:24px 0;color:var(--accent-dark)}
     .note-box p:last-child{margin-bottom:0}
     .cost-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
-    .cost-card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
-    .cost-card strong{display:block;color:var(--green);font-size:1rem;margin-bottom:7px}
+    .cost-card{border:1px solid var(--border);border-radius:14px;padding:16px;background:var(--white)}
+    .cost-card strong{display:block;color:var(--accent);font-size:1rem;margin-bottom:7px}
     .cost-card span{display:block;font-size:.92rem;color:var(--muted)}
     .checklist{counter-reset:compare;list-style:none;padding:0;margin:22px 0}
-    .checklist li{counter-increment:compare;position:relative;padding:0 0 15px 46px;margin:0 0 15px;border-bottom:1px solid #ecebe4}
-    .checklist li:before{content:counter(compare,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--green2);font-size:.82rem;font-weight:800;letter-spacing:.05em}
-    .cta-panel{margin:34px 0;padding:clamp(22px,4vw,34px);border-radius:18px;background:var(--green);color:#fff}
-    .cta-panel h2,.cta-panel h3{color:#fff;margin:0 0 10px}
-    .cta-panel p{color:#e4ebe5;margin-bottom:20px}
-    .cta-panel .btn{background:#fff;color:var(--green);border-color:#fff}.cta-panel .btn:hover{background:#f0eadf}
-    .faq{border-top:1px solid var(--line);padding:18px 0}.faq h3{font:750 1.06rem/1.4 Inter,system-ui,sans-serif;letter-spacing:0;margin:0 0 8px}.faq p{margin:0}
-    .sources{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;margin-top:40px}
-    footer{background:#202b28;color:#e4ebe5;padding:28px 0;font-size:.87rem}
+    .checklist li{counter-increment:compare;position:relative;padding:0 0 15px 46px;margin:0 0 15px;border-bottom:1px solid var(--bg-alt)}
+    .checklist li:before{content:counter(compare,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--accent-dark);font-size:.82rem;font-weight:800;letter-spacing:.05em}
+    .cta-panel{margin:34px 0;padding:clamp(22px,4vw,34px);border-radius:18px;background:var(--accent);color:var(--white)}
+    .cta-panel h2,.cta-panel h3{color:var(--white);margin:0 0 10px}
+    .cta-panel p{color:var(--bg-alt);margin-bottom:20px}
+    .cta-panel .btn{background:var(--white);color:var(--accent);border-color:var(--white)}.cta-panel .btn:hover{background:var(--bg)}
+    .faq{border-top:1px solid var(--border);padding:18px 0}.faq h3{font:750 1.06rem/1.4 Inter,system-ui,sans-serif;letter-spacing:0;margin:0 0 8px}.faq p{margin:0}
+    .sources{font-size:.9rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px;margin-top:40px}
+    footer{background:var(--dark);color:var(--white);padding:28px 0;font-size:.87rem}
     footer .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    footer a{color:#fff}
+    footer a{color:var(--white)}
     @media(max-width:820px){.content-layout{grid-template-columns:1fr;gap:22px;padding-top:28px}.toc{position:static}.toc ol{columns:2;column-gap:25px}.hero{padding:52px 0 36px}}
-    @media(max-width:520px){.shell{width:min(calc(100% - 24px),var(--max))}.sitebar-inner{min-height:60px}.toplink{font-size:.8rem}.hero{padding-top:42px}.content-layout{padding-bottom:48px}.toc ol{columns:1}.cost-grid{grid-template-columns:1fr}.actions .btn{width:100%}article{border-radius:16px;padding:22px 18px}}
+    @media(max-width:520px){.shell{width:min(calc(100% - 24px),var(--container))}.sitebar-inner{min-height:60px}.toplink{font-size:.8rem}.hero{padding-top:42px}.content-layout{padding-bottom:48px}.toc ol{columns:1}.hero-note{font-size:.8rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
   </style>
 </head>
@@ -133,7 +133,7 @@
       <div class="shell">
         <div class="eyebrow">Thane home interiors · Practical planning guide · 2026</div>
         <h1>Interior Designers in Thane: Fees, Costs &amp; How to Choose</h1>
-        <p>Planning a new home or renovating your current one? Learn how to compare interior designers in Thane, understand the difference between design fees and execution costs, and plan a budget that fits your needs before work begins.</p>
+        <p>Planning a new home or renovating your current one? Learn how to compare interior designers in Thane, understand the difference between design fees and execution costs, and plan a budget that fits your home and lifestyle.</p>
         <div class="actions">
           <a class="btn" href="https://vrinteriorsdesignstudio.in/thane-residential-interior-design-cost.html">Calculate Your Interior Design Cost <span aria-hidden="true">→</span></a>
           <a class="btn btn-secondary" href="#designer-checklist">See the designer checklist</a>
@@ -154,21 +154,21 @@
           <li><a href="#rule">The 70/30 rule</a></li>
           <li><a href="#faqs">Frequently asked questions</a></li>
         </ol>
-        <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line)">
+        <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border)">
           <a class="toplink" href="https://vrinteriorsdesignstudio.in/thane-residential-interior-design-cost.html">Estimate your budget →</a>
         </div>
       </nav>
 
       <article>
-        <p class="lead">The right interior designer should help you balance function, visual appeal, durability and budget—not just choose colours or furniture. Before you sign a contract, understand exactly what the design fee covers, what execution includes, and how changes will be priced.</p>
+        <p class="lead">The right interior designer should help you balance function, visual appeal, durability and budget—not just choose colours or furniture. Before you sign a contract, understand the scope, the pricing model and the value you are actually paying for.</p>
 
         <h2 id="choose">How to choose a top interior designer in Thane</h2>
-        <p>When looking for a <strong>top interior designer in Thane</strong>, start with the kind of project you need: a complete turnkey home, a modular kitchen, wardrobes, a room refresh, or design consultation only. Studios can offer different services, so compare like-for-like proposals rather than comparing only the headline price.</p>
-        <p>Ask each shortlisted designer for a portfolio of completed projects, a clear scope of work, material specifications, an estimated schedule and a written payment plan. If possible, discuss how the studio handles site supervision, snagging, delays and changes after the design is approved.</p>
-        <div class="note-box"><p><strong>Practical tip:</strong> A low quote is not automatically the best value. Check whether it includes measurements, drawings, materials, installation, transport, site supervision, taxes and handover. Missing items may appear later as extras.</p></div>
+        <p>When looking for a <strong>top interior designer in Thane</strong>, start with the kind of project you need: a complete turnkey home, a modular kitchen, wardrobes, a room refresh, or a partial renovation. A designer’s fit depends on the size of the home, the finish quality you want and the amount of execution support you need.</p>
+        <p>Ask each shortlisted designer for a portfolio of completed projects, a clear scope of work, material specifications, an estimated schedule and a written payment plan. If possible, discuss how they handle measurements, site supervision, change requests and final handover before you commit.</p>
+        <div class="note-box"><p><strong>Practical tip:</strong> A low quote is not automatically the best value. Check whether it includes measurements, drawings, materials, installation, transport, taxes and any hidden exclusions before comparing it with a higher-priced proposal.</p></div>
 
         <h2 id="top-ten">Searching for the top 10 interior designers in Thane?</h2>
-        <p id="designer-checklist">Search results and “top 10” lists can change, and a ranking alone cannot establish which designer is right for your home. Instead of relying on an unverified ranking, build a shortlist of five to ten firms and compare them against the same criteria:</p>
+        <p id="designer-checklist">Search results and “top 10” lists can change, and a ranking alone cannot establish which designer is right for your home. Instead of relying on an unverified ranking, build a shortlist using a practical comparison checklist.</p>
         <ol class="checklist">
           <li><strong>Relevant portfolio:</strong> Look for projects with a similar apartment size, style and level of finish to yours.</li>
           <li><strong>Clear scope:</strong> Confirm whether the proposal is design-only, partial execution or turnkey delivery.</li>
@@ -181,7 +181,7 @@
           <li><strong>References and reviews:</strong> Look for detailed, recent feedback and ask for references where appropriate.</li>
           <li><strong>Communication fit:</strong> Choose a team that listens, explains trade-offs and documents decisions.</li>
         </ol>
-        <p>For a fair comparison, give every shortlisted firm the same floor plan, requirements, target budget and preferred completion window. Compare the scope and exclusions line by line before choosing.</p>
+        <p>For a fair comparison, give every shortlisted firm the same floor plan, requirements, target budget and preferred completion window. Compare the scope and exclusions line by line before choosing a designer.</p>
 
         <div class="cta-panel">
           <h2>Start with a realistic budget</h2>
@@ -190,7 +190,7 @@
         </div>
 
         <h2 id="budget">How to find low budget interior designers in Thane</h2>
-        <p>If you are searching for <strong>low budget interior designers in Thane</strong>, focus on controlling scope and avoiding unnecessary changes—not only on choosing the cheapest materials. A well-planned, phased project can deliver the essentials first and leave decorative upgrades for later.</p>
+        <p>If you are searching for <strong>low budget interior designers in Thane</strong>, focus on controlling scope and avoiding unnecessary changes—not only on choosing the cheapest materials. A sensible low-budget plan still needs clear design decisions and a realistic specification.</p>
         <ul>
           <li><strong>Prioritise essentials:</strong> List must-haves such as kitchen storage, wardrobes, lighting and basic electrical needs before optional décor.</li>
           <li><strong>Use finishes strategically:</strong> Consider durable laminates or other practical finishes where they meet your use requirements; reserve premium finishes for a few focal areas.</li>
@@ -199,22 +199,22 @@
           <li><strong>Compare total value:</strong> Check material grade, hardware, installation, service and exclusions—not just the starting price.</li>
           <li><strong>Stage the work carefully:</strong> If doing the project in phases, ask the designer to plan the phases together so wiring, measurements and finishes do not need to be redone.</li>
         </ul>
-        <p>Ask for a written quotation showing what can fit within your budget and what would need to be excluded or deferred. “Budget interior” should still mean a clear specification, safe installation and transparent terms.</p>
+        <p>Ask for a written quotation showing what can fit within your budget and what would need to be excluded or deferred. “Budget interior” should still mean a clear specification, safe installation and realistic planning.</p>
 
         <h2 id="near-me">Finding an interior designer near me in Thane</h2>
-        <p>Searching for an <strong>interior designer near me</strong> or an <strong>interior designer in Thane near me</strong> is a useful starting point, but proximity is only one factor. Check whether the team can visit your property, coordinate with your housing society, supervise on-site work and service the project after installation.</p>
-        <p>When you contact a designer, share your locality, apartment configuration, approximate carpet area, whether the home is new or occupied, and the rooms you want to work on. You can also share reference images and a realistic budget range. These details help make an initial conversation more relevant.</p>
+        <p>Searching for an <strong>interior designer near me</strong> or an <strong>interior designer in Thane near me</strong> is a useful starting point, but proximity is only one factor. Check whether the designer regularly works on homes similar to yours, whether they are comfortable with your layout and whether they can coordinate with your society and site conditions.</p>
+        <p>When you contact a designer, share your locality, apartment configuration, approximate carpet area, whether the home is new or occupied, and the rooms you want to work on. You can also share inspiration images, a rough budget and the timeline you have in mind.</p>
         <p>Before booking a site visit, confirm whether the consultation is free or paid, whether the fee is adjusted against the project later, and what you will receive after the meeting.</p>
 
         <h2 id="fees-cost">Interior designer in Thane fees, price and cost: what is the difference?</h2>
-        <p>Searches for <strong>interior designer in Thane fees</strong>, <strong>interior designer in Thane price</strong> and <strong>interior designer in Thane cost</strong> often combine three different things:</p>
+        <p>Searches for <strong>interior designer in Thane fees</strong>, <strong>interior designer in Thane price</strong> and <strong>interior designer in Thane cost</strong> often combine three different ideas: design fees, execution cost and the total turnkey price.</p>
         <div class="cost-grid">
           <div class="cost-card"><strong>Design fee</strong><span>Planning, layouts, drawings, selections and design consultation, depending on the package.</span></div>
           <div class="cost-card"><strong>Execution cost</strong><span>Materials, carpentry, modular items, civil/electrical work, finishes, labour and installation where included.</span></div>
           <div class="cost-card"><strong>Turnkey price</strong><span>A bundled price for the specified design and execution scope, subject to clear inclusions and exclusions.</span></div>
         </div>
-        <p>There is no single fee that applies to every home. Some designers charge a flat consultation fee, a per-square-foot design fee, a percentage of the project value, or a combined design-and-execution price. A published 2026 NoBroker guide illustrates the range of pricing models used in India; its figures are general market references, not a quote from VR Interior Design Studio and not a guarantee of current Thane pricing.</p>
-        <p>Total home interior cost also depends on carpet area, storage requirements, kitchen specifications, material and hardware grades, ceiling and lighting work, electrical or plumbing changes, furniture, site access and the level of project supervision. Two quotations with the same total can cover very different amounts of work.</p>
+        <p>There is no single fee that applies to every home. Some designers charge a flat consultation fee, a per-square-foot design fee, a percentage of the project value, or a combined design-and-execution rate. The right model depends on the service level the designer is providing.</p>
+        <p>Total home interior cost also depends on carpet area, storage requirements, kitchen specifications, material and hardware grades, ceiling and lighting work, electrical or plumbing changes, and whether demolition or civil work is included. Always ask for the same scope to be compared across quotes.</p>
         <h3>How to compare quotations properly</h3>
         <ul>
           <li>Make sure both quotations cover the same rooms and work items.</li>
@@ -223,32 +223,32 @@
           <li>Ask how extra work is approved and priced before it begins.</li>
           <li>Link payments to documented milestones and agreed deliverables.</li>
         </ul>
-        <p>Use the <a href="https://vrinteriorsdesignstudio.in/thane-residential-interior-design-cost.html">interior design cost calculator</a> for an initial estimate, then request a site-specific written quote for a reliable project budget.</p>
+        <p>Use the <a href="https://vrinteriorsdesignstudio.in/thane-residential-interior-design-cost.html">interior design cost calculator</a> for an initial estimate, then request a site-specific written quotation before making a commitment.</p>
 
         <h2 id="rule">What is the 70/30 rule in interior design?</h2>
-        <p>The <strong>70/30 rule in interior design</strong> is a styling guideline: use one main look, palette or material direction for roughly 70% of the room, then use the remaining 30% for a contrasting or complementary element. For example, a room might use a calm neutral base for the walls and larger furniture, then add character through accent chairs, art, patterned cushions, timber textures or statement lighting.</p>
-        <p>It is a flexible design principle, not a building standard or a rule that every room must follow exactly. Use it to think about balance and contrast, then adapt it to the room's natural light, existing finishes, practical needs and personal style. It is also different from the 60/30/10 formula sometimes used to distribute three colours.</p>
+        <p>The <strong>70/30 rule in interior design</strong> is a styling guideline: use one main look, palette or material direction for roughly 70% of the room, then use the remaining 30% for contrast, accent and texture. It helps create balanced spaces that feel cohesive rather than overly busy.</p>
+        <p>It is a flexible design principle, not a building standard or a rule that every room must follow exactly. Use it to think about balance and contrast, then adapt it to the room’s natural light, layout and personal needs.</p>
 
         <h2 id="faqs">Frequently asked questions about interior designers in Thane</h2>
         <section class="faq">
           <h3>Who are the best interior designers in Thane?</h3>
-          <p>The best fit depends on your scope, budget, preferred style and the level of execution support you need. Compare completed projects, detailed quotations, material specifications, timelines, independent reviews and after-sales terms. Do not choose on a “top” label alone; shortlist firms whose past work and written scope match your requirements.</p>
+          <p>The best fit depends on your scope, budget, preferred style and the level of execution support you need. Compare completed projects, detailed quotations, material specifications, timeline expectations and communication before deciding.</p>
         </section>
         <section class="faq">
           <h3>How much should I pay for an interior designer?</h3>
-          <p>Pay for a clearly defined service and deliverable, not an unexplained headline number. Before committing, confirm whether you are paying for consultation, design drawings, material selections, site supervision or full execution. Compare what is included, the revision policy, taxes and the payment schedule. Obtain the terms in writing.</p>
+          <p>Pay for a clearly defined service and deliverable, not an unexplained headline number. Before committing, confirm whether you are paying for consultation, design drawings, material selection, project supervision or full execution.</p>
         </section>
         <section class="faq">
           <h3>How much does an interior designer usually charge?</h3>
-          <p>Pricing models vary: a designer may charge a flat consultation fee, a per-square-foot design fee, a percentage of the project budget, or a combined turnkey price. The final amount depends on the area, complexity, deliverables and finish level. Published market figures are only reference points; ask for a current, itemised quotation for your property.</p>
+          <p>Pricing models vary: a designer may charge a flat consultation fee, a per-square-foot design fee, a percentage of the project budget, or a combined turnkey price. The final amount depends on your home size, design complexity and material quality.</p>
         </section>
         <section class="faq">
           <h3>What is the 70/30 rule in interior design?</h3>
-          <p>It is a general styling guideline where approximately 70% of the room follows a dominant colour, style or material direction and 30% introduces contrast or supporting accents. Use it as a starting point for visual balance, not a strict formula.</p>
+          <p>It is a general styling guideline where approximately 70% of the room follows a dominant colour, style or material direction and 30% introduces contrast or supporting accents. Use it as a design framework, not a strict formula.</p>
         </section>
         <section class="faq">
           <h3>How can I keep my home interior project within budget?</h3>
-          <p>Finalise requirements early, compare itemised quotations, choose materials based on use and durability, keep a contingency for unexpected site conditions, and approve every change in writing before work proceeds.</p>
+          <p>Finalise requirements early, compare itemised quotations, choose materials based on use and durability, keep a contingency for unexpected site conditions, and approve every change in writing before it starts.</p>
         </section>
 
         <div class="cta-panel">
@@ -259,7 +259,7 @@
 
         <div class="sources">
           <strong>Further reading</strong>
-          <p>This guide offers general planning information, not a binding quotation. For more context, see <a href="https://www.nobroker.in/interiors/design-guides/interior-designer-costs-in-india/" target="_blank" rel="noopener noreferrer">NoBroker's guide to interior designer costs in India</a> and <a href="https://www.homesandgardens.com/news/70-30-split-in-interior-design" target="_blank" rel="noopener noreferrer">Homes &amp; Gardens' explanation of the 70/30 styling split</a>. Actual costs and project terms must be verified for the property and scope.</p>
+          <p>This guide offers general planning information, not a binding quotation. For more context, see <a href="https://www.nobroker.in/interiors/design-guides/interior-designer-costs-in-india/">NoBroker’s guide on interior designer costs in India</a> and other practical budgeting references before finalising your project scope.</p>
         </div>
       </article>
     </div>
