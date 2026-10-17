@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8faf9">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>Interior Design Cost Calculator in Thane | VR Interior Designs</title>
+  <meta name="description" content="Estimate turnkey home interior design costs in Thane. Compare 1–4 BHK carpet areas and Essential, Thane Premium, and Bespoke Luxury finishes with a live cost breakdown.">
+  <meta name="keywords" content="interior design cost calculator Thane, home renovation cost Thane, turnkey interior design, 1 BHK interior cost, 2 BHK interior cost, 3 BHK interior cost, 4 BHK interior cost, VR Interior Designs">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="Interior Design Cost Calculator in Thane | VR Interior Designs">
+  <meta property="og:description" content="Estimate your turnkey home interior budget by BHK, carpet area, and material finish. See the cost and category breakdown update live.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Interior Design Cost Calculator in Thane | VR Interior Designs">
+  <meta name="twitter:description" content="Plan your Thane home interiors with a live renovation cost calculator and material finish options.">
+  <!-- Add a canonical URL once the final production domain and route are confirmed. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Interior Design Cost Calculator in Thane",
+    "description": "Interactive turnkey home interior cost calculator for comparing property layouts, carpet area, finish tiers, estimated costs, and renovation timelines.",
+    "inLanguage": "en-IN",
+    "about": {
+      "@type": "Thing",
+      "name": "Home interior design and turnkey renovation cost estimation"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is the turnkey renovation estimate calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The estimate uses the selected carpet area multiplied by the selected finish tier's rate, then applies a 5% logistics adjustment. It is an indicative estimate, not a final quotation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What affects the interior design cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The estimate changes with carpet area and selected finish tier. Final project costs may also depend on the confirmed scope, site conditions, materials, fittings, and custom requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long can a renovation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This calculator estimates 4–6 weeks for areas below 800 sq. ft., 6–8 weeks for areas from 800 to below 1,300 sq. ft., and 8–12 weeks for areas of 1,300 sq. ft. or more. Actual timelines depend on the confirmed project scope and site conditions."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f6f8f7;
+      --surface: #ffffff;
+      --ink: #17211f;
+      --muted: #64716d;
+      --line: #e2e8e5;
+      --soft: #f0f4f2;
+      --primary: #276c58;
+      --primary-strong: #1f5848;
+      --success: #237a55;
+      --success-bg: #e8f5ed;
+      --blue: #547fe8;
+      --gold: #c48b31;
+      --coral: #c87561;
+      --slate: #85918d;
+      --radius: 18px;
+      --shadow: 0 16px 44px rgba(20, 45, 36, .07);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page-shell { width: min(100% - 32px, 1040px); margin: 0 auto; padding: 48px 0 64px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--primary); font-size: .76rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; display: inline-block; width: 22px; height: 2px; background: currentColor; }
+    .page-header { max-width: 760px; margin-bottom: 28px; }
+    h1 { max-width: 760px; margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.08; letter-spacing: -.045em; font-weight: 760; }
+    .lede { max-width: 700px; margin: 0; color: var(--muted); font-size: 1.02rem; }
+    .calculator { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .estimate-summary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 23px 25px; border-bottom: 1px solid var(--line); }
+    .estimate-label, .metric-label { display: block; color: var(--muted); font-size: .78rem; font-weight: 650; }
+    .estimate-label { margin-bottom: 4px; }
+    .estimate-total { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: clamp(1.45rem, 3.5vw, 1.8rem); line-height: 1.25; font-weight: 760; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+    .tier-badge { display: inline-flex; align-items: center; padding: 5px 10px; border: 1px solid #c9e7d4; border-radius: 999px; background: var(--success-bg); color: var(--success); font-size: .72rem; font-weight: 700; letter-spacing: 0; white-space: nowrap; }
+    .metrics { display: flex; gap: 28px; padding-left: 24px; border-left: 1px solid var(--line); }
+    .metric-value { display: block; margin-top: 3px; font-size: .95rem; font-weight: 720; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .breakdown { padding: 22px 25px 24px; border-bottom: 1px solid var(--line); }
+    .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 0 0 18px; }
+    .section-heading h2 { margin: 0; font-size: 1.05rem; letter-spacing: -.02em; }
+    .section-heading p { margin: 3px 0 0; color: var(--muted); font-size: .83rem; }
+    .chart-layout { display: grid; grid-template-columns: minmax(190px, 250px) minmax(0, 1fr); align-items: center; gap: clamp(20px, 5vw, 48px); }
+    .donut-wrap { width: 100%; max-width: 250px; margin: 0 auto; }
+    #costChart { display: block; width: 100%; height: auto; overflow: visible; }
+    .legend { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .legend-item { display: grid; grid-template-columns: 11px minmax(0, 1fr) auto; align-items: center; gap: 10px; }
+    .legend-swatch { width: 10px; height: 28px; border-radius: 5px; }
+    .legend-name { display: block; font-size: .86rem; font-weight: 650; line-height: 1.35; }
+    .legend-share { display: block; margin-top: 2px; color: var(--muted); font-size: .75rem; }
+    .legend-value { padding-left: 8px; font-size: .84rem; font-weight: 720; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .controls { padding: 24px 25px 22px; }
+    .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; }
+    .field { min-width: 0; }
+    .field label, .field-label { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 9px; color: var(--muted); font-size: .83rem; font-weight: 650; }
+    .select-wrap { position: relative; }
+    select { width: 100%; min-height: 47px; appearance: none; padding: 0 42px 0 13px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; }
+    .select-wrap::after { content: ""; position: absolute; top: 18px; right: 16px; width: 8px; height: 8px; border-right: 1.7px solid var(--muted); border-bottom: 1.7px solid var(--muted); transform: rotate(45deg); pointer-events: none; }
+    select:focus-visible, input:focus-visible { outline: 3px solid rgba(39, 108, 88, .23); outline-offset: 2px; }
+    .area-number { color: var(--ink); font-size: .9rem; font-weight: 740; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    input[type="range"] { display: block; width: 100%; margin: 15px 0 5px; accent-color: var(--primary); cursor: pointer; }
+    .range-limits { display: flex; justify-content: space-between; color: var(--muted); font-size: .73rem; }
+    .tier-note { margin: 20px 0 0; padding: 12px 14px; border-radius: 10px; background: var(--soft); color: var(--muted); font-size: .79rem; }
+    .tier-note strong { color: var(--ink); }
+    .estimate-disclaimer { margin: 0; padding: 14px 25px 18px; color: var(--muted); font-size: .74rem; }
+    .content-section { margin-top: 38px; }
+    .content-section h2 { margin: 0 0 10px; font-size: clamp(1.25rem, 3vw, 1.6rem); line-height: 1.2; letter-spacing: -.03em; }
+    .content-section p { max-width: 820px; margin: 0; color: var(--muted); }
+    .faq-list { display: grid; gap: 10px; margin-top: 16px; }
+    details { padding: 17px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    summary { color: var(--ink); font-weight: 700; cursor: pointer; }
+    details p { padding-top: 10px; font-size: .92rem; }
+    footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+    @media (max-width: 680px) {
+      .page-shell { width: min(100% - 22px, 1040px); padding-top: 30px; }
+      .estimate-summary { align-items: flex-start; padding: 19px 17px; }
+      .metrics { width: 100%; justify-content: flex-start; gap: 24px; padding: 13px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+      .breakdown { padding: 20px 17px; }
+      .chart-layout { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      .donut-wrap { width: min(100%, 230px); }
+      .legend { gap: 13px; }
+      .controls { padding: 21px 17px; }
+      .controls-grid { grid-template-columns: minmax(0, 1fr); gap: 19px; }
+      .estimate-disclaimer { padding: 12px 17px 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow">VR Interior Designs · Thane</p>
+      <h1>Home Interior Design Cost Calculator</h1>
+      <p class="lede">Explore an indicative turnkey renovation budget for your Thane home. Choose your BHK layout, adjust carpet area, and compare material finish levels to see the estimated cost and category-wise breakdown update instantly.</p>
+    </header>
+
+    <section class="calculator" aria-label="Interactive home renovation cost calculator">
+      <div class="estimate-summary" aria-live="polite" aria-atomic="true">
+        <div>
+          <span class="estimate-label">Estimated turnkey renovation cost</span>
+          <div class="estimate-total"><span id="totalCost">₹11.88 Lakh</span><span class="tier-badge" id="tierBadge">Thane Premium Ready</span></div>
+        </div>
+        <div class="metrics">
+          <div><span class="metric-label">Avg. rate</span><span class="metric-value" id="rateValue">₹1,628 / sq.ft.</span></div>
+          <div><span class="metric-label">Timeline estimate</span><span class="metric-value" id="timelineValue">4–6 Weeks</span></div>
+        </div>
+      </div>
+
+      <div class="breakdown">
+        <div class="section-heading">
+          <div><h2>Estimated cost breakdown</h2><p>Illustrative allocation across major work categories</p></div>
+        </div>
+        <div class="chart-layout">
+          <div class="donut-wrap">
+            <svg id="costChart" viewBox="0 0 250 250" role="img" aria-labelledby="chartTitle chartDesc">
+              <title id="chartTitle">Renovation cost distribution</title>
+              <desc id="chartDesc">An illustrative chart showing how the estimated renovation budget is divided among work categories.</desc>
+              <g id="chartSlices"></g>
+              <circle cx="125" cy="125" r="61" fill="#ffffff"></circle>
+              <text x="125" y="117" text-anchor="middle" fill="#64716d" font-size="11" font-weight="600">Carpet area</text>
+              <text id="chartArea" x="125" y="140" text-anchor="middle" fill="#17211f" font-size="20" font-weight="760">730 sq.ft.</text>
+            </svg>
+          </div>
+          <ul class="legend" id="costLegend" aria-label="Cost categories"></ul>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="controls-grid">
+          <div class="field">
+            <label for="layoutSelect">Property layout</label>
+            <div class="select-wrap">
+              <select id="layoutSelect" name="layout">
+                <option value="1bhk">1 BHK</option>
+                <option value="2bhk" selected>2 BHK</option>
+                <option value="3bhk">3 BHK</option>
+                <option value="4bhk">4 BHK / Duplex</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="tierSelect">Material standard finish</label>
+            <div class="select-wrap">
+              <select id="tierSelect" name="finish">
+                <option value="essential">Essential Comfort</option>
+                <option value="premium" selected>Thane Premium</option>
+                <option value="luxury">Bespoke Luxury</option>
+              </select>
+            </div>
+          </div>
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="areaRange"><span>Carpet area</span><span class="area-number" id="areaValue">730 sq.ft.</span></label>
+            <input id="areaRange" type="range" min="600" max="950" value="730" step="10" aria-label="Adjust carpet area in square feet">
+            <div class="range-limits"><span id="areaMinLabel">600 sq.ft.</span><span id="areaMaxLabel">950 sq.ft.</span></div>
+          </div>
+        </div>
+        <p class="tier-note" id="tierNote"><strong>Thane Premium:</strong> Includes acrylic finishes, quartz counters, false ceilings, and ambient lighting. Pricing is an indicative planning estimate for residential interiors in the Thane area.</p>
+      </div>
+      <p class="estimate-disclaimer">This calculator provides an indicative budget, not a binding quotation. Final pricing and timelines depend on the agreed scope, site conditions, material selections, measurements, and project requirements.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="about-heading">
+      <h2 id="about-heading">Plan your Thane home renovation budget</h2>
+      <p>This interior design cost calculator helps you compare estimated turnkey costs for 1 BHK, 2 BHK, 3 BHK, and 4 BHK homes. Change the carpet area and finish tier to understand how those choices affect the planning estimate. The category breakdown is an illustrative budget allocation; confirm inclusions, specifications, taxes, and site conditions with your designer before committing to a project.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How is the turnkey renovation estimate calculated?</summary>
+          <p>The estimate multiplies your selected carpet area by the selected finish tier rate and applies a 5% logistics adjustment. It is an indicative planning estimate, not a final quotation.</p>
+        </details>
+        <details>
+          <summary>What affects the interior design cost?</summary>
+          <p>The displayed estimate changes with carpet area and the finish tier. Final project costs may also depend on the agreed scope, site conditions, materials, fittings, and custom requirements.</p>
+        </details>
+        <details>
+          <summary>How long can a renovation take?</summary>
+          <p>The calculator estimates 4–6 weeks for areas below 800 sq. ft., 6–8 weeks for areas from 800 to below 1,300 sq. ft., and 8–12 weeks for areas of 1,300 sq. ft. or more. Actual timelines depend on the confirmed project scope and site conditions.</p>
+        </details>
+      </div>
+    </section>
+    <footer>VR Interior Designs · Thane, Maharashtra. All figures are planning estimates and should be verified against a project-specific quotation.</footer>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const CONFIGURATIONS = {
+        '1bhk': { label: '1 BHK', defaultCarpet: 450, minCarpet: 350, maxCarpet: 600 },
+        '2bhk': { label: '2 BHK', defaultCarpet: 730, minCarpet: 600, maxCarpet: 950 },
+        '3bhk': { label: '3 BHK', defaultCarpet: 1100, minCarpet: 900, maxCarpet: 1400 },
+        '4bhk': { label: '4 BHK / Duplex', defaultCarpet: 1800, minCarpet: 1400, maxCarpet: 2500 }
+      };
+      const MATERIAL_TIERS = {
+        essential: { label: 'Essential Comfort', badge: 'Essential Comfort Ready', ratePerSqFt: 900, description: 'quality laminates, premium modular systems, and standard fittings' },
+        premium: { label: 'Thane Premium', badge: 'Thane Premium Ready', ratePerSqFt: 1550, description: 'acrylic finishes, quartz counters, false ceilings, and ambient lighting' },
+        luxury: { label: 'Bespoke Luxury', badge: 'Bespoke Luxury Ready', ratePerSqFt: 2400, description: 'Italian marble details, high-end veneered woodwork, and custom-automation-ready finishes' }
+      };
+      const CATEGORIES = [
+        { name: 'Custom Woodwork & Modular Kitchen', weight: 0.42, color: '#547fe8' },
+        { name: 'Civil, Flooring & Premium Surfaces', weight: 0.23, color: '#2d9474' },
+        { name: 'False Ceiling & Ambient Lighting', weight: 0.15, color: '#c48b31' },
+        { name: 'Painting, Wall Treatments & Decor', weight: 0.12, color: '#c87561' },
+        { name: 'Design Fees, Site Supervision & Turnkey Delivery', weight: 0.08, color: '#85918d' }
+      ];
+      const LOGISTICS_MARKUP = 1.05;
+      const formatRupees = (value) => '₹' + Math.round(value).toLocaleString('en-IN');
+      const formatCost = (value) => value >= 100000 ? `₹${(value / 100000).toFixed(2)} Lakh` : formatRupees(value);
+      const byId = (id) => document.getElementById(id);
+      const layoutSelect = byId('layoutSelect');
+      const tierSelect = byId('tierSelect');
+      const areaRange = byId('areaRange');
+
+      function timelineFor(area) {
+        if (area < 800) return '4–6 Weeks';
+        if (area < 1300) return '6–8 Weeks';
+        return '8–12 Weeks';
+      }
+
+      function polarPoint(cx, cy, radius, angle) {
+        return { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
+      }
+
+      function donutPath(cx, cy, outerRadius, innerRadius, startAngle, endAngle) {
+        const startOuter = polarPoint(cx, cy, outerRadius, startAngle);
+        const endOuter = polarPoint(cx, cy, outerRadius, endAngle);
+        const endInner = polarPoint(cx, cy, innerRadius, endAngle);
+        const startInner = polarPoint(cx, cy, innerRadius, startAngle);
+        const largeArc = endAngle - startAngle > Math.PI ? 1 : 0;
+        return [
+          `M ${startOuter.x} ${startOuter.y}`,
+          `A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${endOuter.x} ${endOuter.y}`,
+          `L ${endInner.x} ${endInner.y}`,
+          `A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${startInner.x} ${startInner.y}`,
+          'Z'
+        ].join(' ');
+      }
+
+      function renderChart(area, totalCost) {
+        const slices = byId('chartSlices');
+        const legend = byId('costLegend');
+        slices.replaceChildren();
+        legend.replaceChildren();
+        let angle = -Math.PI / 2;
+
+        CATEGORIES.forEach((category) => {
+          const endAngle = angle + category.weight * Math.PI * 2;
+          const costShare = Math.round(totalCost * category.weight);
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', donutPath(125, 125, 99, 65, angle, endAngle));
+          path.setAttribute('fill', category.color);
+          path.setAttribute('stroke', '#ffffff');
+          path.setAttribute('stroke-width', '2');
+          path.setAttribute('aria-label', `${category.name}: ${formatCost(costShare)}`);
+          slices.appendChild(path);
+          angle = endAngle;
+
+          const item = document.createElement('li');
+          item.className = 'legend-item';
+          const swatch = document.createElement('span');
+          swatch.className = 'legend-swatch';
+          swatch.style.backgroundColor = category.color;
+          swatch.setAttribute('aria-hidden', 'true');
+          const text = document.createElement('span');
+          const name = document.createElement('span');
+          name.className = 'legend-name';
+          name.textContent = category.name;
+          const share = document.createElement('span');
+          share.className = 'legend-share';
+          share.textContent = `${Math.round(category.weight * 100)}% of estimated budget`;
+          text.append(name, share);
+          const value = document.createElement('span');
+          value.className = 'legend-value';
+          value.textContent = formatCost(costShare);
+          item.append(swatch, text, value);
+          legend.appendChild(item);
+        });
+        byId('chartArea').textContent = `${area.toLocaleString('en-IN')} sq.ft.`;
+        byId('chartDesc').textContent = `Illustrative cost breakdown for ${area.toLocaleString('en-IN')} square feet. Total estimated cost ${formatCost(totalCost)}.`;
+      }
+
+      function render() {
+        const config = CONFIGURATIONS[layoutSelect.value] || CONFIGURATIONS['2bhk'];
+        const tier = MATERIAL_TIERS[tierSelect.value] || MATERIAL_TIERS.premium;
+        const area = Number(areaRange.value);
+        const totalCost = Math.round(area * tier.ratePerSqFt * LOGISTICS_MARKUP);
+        const averageRate = Math.round(tier.ratePerSqFt * LOGISTICS_MARKUP);
+
+        byId('totalCost').textContent = formatCost(totalCost);
+        byId('tierBadge').textContent = tier.badge;
+        byId('rateValue').textContent = `${formatRupees(averageRate)} / sq.ft.`;
+        byId('timelineValue').textContent = timelineFor(area);
+        byId('areaValue').textContent = `${area.toLocaleString('en-IN')} sq.ft.`;
+        byId('areaMinLabel').textContent = `${config.minCarpet.toLocaleString('en-IN')} sq.ft.`;
+        byId('areaMaxLabel').textContent = `${config.maxCarpet.toLocaleString('en-IN')} sq.ft.`;
+        byId('tierNote').replaceChildren();
+        const strong = document.createElement('strong');
+        strong.textContent = `${tier.label}: `;
+        byId('tierNote').append(strong, `Includes ${tier.description}. Pricing is an indicative planning estimate for residential interiors in the Thane area.`);
+        areaRange.min = String(config.minCarpet);
+        areaRange.max = String(config.maxCarpet);
+        areaRange.setAttribute('aria-valuetext', `${area.toLocaleString('en-IN')} square feet`);
+        renderChart(area, totalCost);
+      }
+
+      layoutSelect.addEventListener('change', () => {
+        const config = CONFIGURATIONS[layoutSelect.value] || CONFIGURATIONS['2bhk'];
+        areaRange.min = String(config.minCarpet);
+        areaRange.max = String(config.maxCarpet);
+        areaRange.value = String(config.defaultCarpet);
+        render();
+      });
+      tierSelect.addEventListener('change', render);
+      areaRange.addEventListener('input', render);
+      render();
+    })();
+  </script>
+</body>
+</html>
