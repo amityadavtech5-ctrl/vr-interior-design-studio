@@ -55,117 +55,136 @@
   }
   </script>
   <style>
-    .skip{position:absolute;left:-9999px;top:8px;padding:10px;background:var(--white);z-index:10}
-    .skip:focus{left:8px}
+   /* Page-specific blog styles. Load after the shared main stylesheet. */
+.skip{position:absolute;left:-9999px;top:8px;padding:10px;background:var(--white);z-index:10}
+.skip:focus{left:16px}
 
-    /* Small additions to the shared brand/header components. */
-    .blog-brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
-    .brand-mark{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;background:var(--dark);color:var(--white);border-radius:50%;font-family:Georgia,"Times New Roman",serif;font-size:1rem;font-weight:600;letter-spacing:0}
-    .blog-header-inner{gap:18px}
-    .blog-header-cta{white-space:nowrap}
-    .toc-cta{color:var(--accent-dark);font-weight:700;text-decoration:none}
-    .toc-cta:hover{text-decoration:underline;text-underline-offset:3px}
+/* Use one consistent centered width and gutter system for header, hero and article. */
+.blog-page{width:100%;max-width:100%;min-width:0;overflow-x:clip}
+.blog-page main{width:100%;min-width:0}
+.blog-page .container{
+  width:min(calc(100% - 48px),var(--container,1180px));
+  max-width:1180px;
+  margin-inline:auto;
+}
+.blog-page img,.blog-page svg,.blog-page video,.blog-page iframe{max-width:100%;height:auto}
+.site-header,.blog-header-inner,.blog-brand,.blog-header-cta,.blog-hero,.content-layout,.toc,.blog-article{min-width:0;max-width:100%}
 
-    /* Page-specific hero treatment; shared .hero, h1, .eyebrow, .lead and .actions come from main.css. */
-    .blog-hero{background:radial-gradient(ellipse at 90% 15%,rgba(234,216,188,.65),transparent 33%),linear-gradient(180deg,var(--bg),var(--bg-alt))}
-    .blog-hero .lead{max-width:780px;margin-bottom:26px}
-    .hero-note{font-size:.85rem;color:var(--muted);margin-top:12px}
+/* Header additions; shared typography, button and header layout come from main.css. */
+.blog-brand{display:inline-flex;align-items:center;gap:10px;flex:0 1 auto;color:var(--text);text-decoration:none;white-space:normal;overflow-wrap:normal}
+.brand-mark{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;background:var(--dark);color:var(--white);border-radius:50%;font-family:Georgia,"Times New Roman",serif;font-size:1rem;font-weight:600;letter-spacing:0}
+.blog-header-inner{gap:18px;flex-wrap:wrap}
+.blog-header-cta{flex:0 1 auto;width:auto;max-width:100%;white-space:nowrap;text-align:center}
+.toc-cta{color:var(--accent-dark);font-weight:700;text-decoration:none}
+.toc-cta:hover{text-decoration:underline;text-underline-offset:3px}
 
-    /* Keep this page from widening the viewport when shared site styles are loaded. */
-    .blog-page{max-width:100%;min-width:0;overflow-x:clip}
-    .blog-page img,.blog-page svg,.blog-page video,.blog-page iframe{max-width:100%}
-    .site-header,.blog-header-inner,.blog-brand,.blog-header-cta,.blog-hero,.content-layout,.toc,.blog-article{min-width:0;max-width:100%}
-    .blog-header-inner{flex-wrap:wrap}
-    .blog-brand{flex:0 1 auto;white-space:normal;overflow-wrap:anywhere}
-    .blog-header-cta{flex:0 1 auto;width:auto;max-width:100%;white-space:normal;text-align:center}
+/* Full-width hero background, with the inner text aligned to the same container gutters. */
+.blog-hero{background:radial-gradient(ellipse at 90% 15%,rgba(234,216,188,.65),transparent 33%),linear-gradient(180deg,var(--bg),var(--bg-alt))}
+.blog-hero .container{min-width:0}
+.blog-hero .lead{max-width:72ch;margin-bottom:26px}
+.blog-hero .eyebrow{max-width:100%;overflow-wrap:break-word}
+.blog-hero h1{max-width:900px;overflow-wrap:normal;hyphens:auto}
+.hero-note{max-width:76ch;font-size:.85rem;color:var(--muted);margin-top:12px}
 
-    .content-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:42px;align-items:start;padding:45px 0 76px}
-    .toc{position:sticky;top:24px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px}
-    .toc h2{font:800 .78rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
-    .toc ol{padding-left:19px;margin:0}
-    .toc li{padding:5px 0;font-size:.9rem;line-height:1.45}
-    .toc a:not(.toc-cta){color:var(--text);text-decoration:none}
-    .toc a:not(.toc-cta):hover{text-decoration:underline;text-underline-offset:3px}
+/* Article + contents layout. Keep the grid from imposing a fixed minimum on its content. */
+.content-layout{
+  display:grid;
+  width:min(calc(100% - 48px),var(--container,1180px));
+  grid-template-columns:minmax(220px,245px) minmax(0,1fr);
+  gap:clamp(24px,3vw,36px);
+  align-items:start;
+  margin-inline:auto;
+  padding:clamp(32px,4vw,48px) 0 clamp(52px,6vw,76px);
+}
+.toc{position:sticky;top:24px;width:100%;min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius,8px);padding:20px}
+.toc h2{font:800 .78rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
+.toc ol{padding-left:19px;margin:0}
+.toc li{padding:5px 0;font-size:.9rem;line-height:1.45;overflow-wrap:normal}
+.toc a:not(.toc-cta){color:var(--text);text-decoration:none}
+.toc a:not(.toc-cta):hover{text-decoration:underline;text-underline-offset:3px}
 
-    .blog-article{min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:clamp(22px,4vw,48px);box-shadow:var(--shadow)}
-    .blog-article h2{font-size:clamp(1.7rem,3vw,2.35rem);margin:48px 0 16px;letter-spacing:-.025em;line-height:1.18}
-    .blog-article h2:first-child{margin-top:0}
-    .blog-article h3{font-size:1.35rem;margin:26px 0 8px;line-height:1.25}
-    .blog-article p{margin:0 0 17px;color:var(--text)}
-    .blog-article ul,.blog-article ol{padding-left:24px;margin:12px 0 22px}
-    .blog-article li{padding-left:4px;margin:7px 0;color:var(--text)}
-    .blog-article a:not(.btn){color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
-    .blog-article a:not(.btn):hover{color:var(--accent);text-decoration-thickness:2px}
-    .note-box{background:var(--bg-alt);border-left:4px solid var(--accent-dark);padding:17px 20px;border-radius:0 12px 12px 0;margin:24px 0;color:var(--accent-dark)}
-    .note-box p:last-child{margin-bottom:0}
+.blog-article{
+  width:100%;min-width:0;max-width:100%;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius,8px);padding:clamp(24px,3vw,40px);
+  box-shadow:var(--shadow);overflow-wrap:break-word;word-break:normal;
+}
+.blog-article>*{min-width:0}
+.blog-article h2{max-width:24ch;font-size:clamp(1.65rem,2.5vw,2.2rem);margin:46px 0 16px;letter-spacing:-.025em;line-height:1.18;overflow-wrap:normal;hyphens:auto}
+.blog-article h2:first-child{margin-top:0}
+.blog-article h3{font-size:1.3rem;margin:26px 0 8px;line-height:1.25;overflow-wrap:normal;hyphens:auto}
+.blog-article p{max-width:75ch;margin:0 0 17px;color:var(--text)}
+.blog-article ul,.blog-article ol{max-width:75ch;padding-left:24px;margin:12px 0 22px}
+.blog-article li{padding-left:4px;margin:7px 0;color:var(--text);overflow-wrap:break-word}
+.blog-article a:not(.btn){color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.blog-article a:not(.btn):hover{color:var(--accent);text-decoration-thickness:2px}
+.note-box{max-width:100%;background:var(--bg-alt);border-left:4px solid var(--accent-dark);padding:17px 20px;border-radius:0 var(--radius,8px) var(--radius,8px) 0;margin:24px 0;color:var(--accent-dark);overflow-wrap:break-word}
+.note-box p:last-child{margin-bottom:0}
 
-    .cost-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
-    .cost-card{border:1px solid var(--border);border-radius:14px;padding:16px;background:var(--white)}
-    .cost-card strong{display:block;color:var(--accent-dark);font-size:1rem;margin-bottom:7px}
-    .cost-card span{display:block;font-size:.92rem;color:var(--muted)}
+.cost-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+.cost-card{min-width:0;border:1px solid var(--border);border-radius:var(--radius,8px);padding:16px;background:var(--white)}
+.cost-card strong{display:block;color:var(--accent-dark);font-size:1rem;margin-bottom:7px;overflow-wrap:break-word}
+.cost-card span{display:block;font-size:.92rem;color:var(--muted);overflow-wrap:break-word}
 
-    .checklist{counter-reset:compare;list-style:none;padding:0;margin:22px 0}
-    .checklist li{counter-increment:compare;position:relative;padding:0 0 15px 46px;margin:0 0 15px;border-bottom:1px solid var(--bg-alt)}
-    .checklist li::before{content:counter(compare,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--accent-dark);font-size:.82rem;font-weight:800;letter-spacing:.05em}
+.checklist{counter-reset:compare;list-style:none;padding:0;margin:22px 0}
+.checklist li{counter-increment:compare;position:relative;padding:0 0 15px 46px;margin:0 0 15px;border-bottom:1px solid var(--bg-alt)}
+.checklist li::before{content:counter(compare,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--accent-dark);font-size:.82rem;font-weight:800;letter-spacing:.05em}
 
-    .cta-panel{margin:34px 0;padding:clamp(22px,4vw,34px);border-radius:18px;background:var(--dark);color:var(--white)}
-    .cta-panel h2,.cta-panel h3{color:var(--white);margin:0 0 10px}
-    .cta-panel p{color:var(--accent-light);margin-bottom:20px}
-    .cta-panel .btn{background:var(--white);color:var(--dark);border-color:var(--white)}
-    .cta-panel .btn:hover{background:var(--accent-light);border-color:var(--accent-light)}
+.cta-panel{min-width:0;margin:34px 0;padding:clamp(22px,3vw,32px);border-radius:var(--radius,8px);background:var(--dark);color:var(--white);overflow-wrap:break-word}
+.cta-panel h2,.cta-panel h3{max-width:24ch;color:var(--white);margin:0 0 10px}
+.cta-panel p{color:var(--accent-light);margin-bottom:20px}
+.cta-panel .btn{max-width:100%;background:var(--white);color:var(--dark);border-color:var(--white);white-space:normal;text-align:center}
+.cta-panel .btn:hover{background:var(--accent-light);border-color:var(--accent-light)}
 
-    .faq{border-top:1px solid var(--border);padding:18px 0}
-    .faq h3{font:750 1.06rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:0;margin:0 0 8px;color:var(--text)}
-    .faq p{margin:0}
-    .sources{font-size:.9rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px;margin-top:40px}
+.faq{min-width:0;border-top:1px solid var(--border);padding:18px 0}
+.faq h3{font:700 1.06rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:0;margin:0 0 8px;color:var(--text)}
+.faq p{margin:0}
+.sources{max-width:75ch;font-size:.9rem;color:var(--muted);border-top:1px solid var(--border);padding-top:20px;margin-top:40px;overflow-wrap:break-word}
+.blog-article pre,.blog-article table{max-width:100%;overflow-x:auto}
 
-    .content-layout{grid-template-columns:minmax(0,245px) minmax(0,1fr)}
-    .blog-article{overflow-wrap:break-word;word-wrap:break-word}
-    .blog-article h2,.blog-article h3,.blog-article p,.blog-article li,.blog-article a,.blog-article strong,.note-box,.cta-panel,.sources{min-width:0;max-width:100%;overflow-wrap:anywhere}
-    .blog-article pre,.blog-article table{display:block;max-width:100%;overflow-x:auto}
-
-    @media(max-width:820px){
-      .content-layout{grid-template-columns:minmax(0,1fr);gap:18px;padding:28px 0 56px}
-      .toc{position:static;width:100%}
-      .toc ol{columns:2;column-gap:24px}
-    }
-    @media(max-width:760px){
-      .blog-hero{padding:clamp(32px,7vw,46px) 0 clamp(28px,6vw,38px)}
-      .blog-hero h1{max-width:100%;font-size:clamp(2rem,8.5vw,3rem);line-height:1.1;letter-spacing:-.035em;overflow-wrap:normal}
-      .blog-hero .lead{max-width:100%;font-size:clamp(1rem,4.2vw,1.125rem);line-height:1.6}
-      .blog-hero .actions{align-items:stretch}
-      .blog-hero .actions .btn{width:100%;max-width:100%;white-space:normal;text-align:center}
-      .content-layout{gap:18px}
-    }
-    @media(max-width:520px){
-      .blog-header-inner{gap:10px;flex-wrap:wrap;padding-block:9px;align-items:center}
-      .blog-brand{flex:1 1 135px;min-width:0;max-width:100%;font-size:clamp(.78rem,3.8vw,.95rem);line-height:1.2;white-space:normal;overflow-wrap:anywhere}
-      .brand-mark{flex:0 0 30px;width:30px;height:30px}
-      .site-header .blog-header-cta{width:auto!important;flex:0 1 auto;max-width:100%;min-height:40px;padding:9px 11px;font-size:clamp(.68rem,3.1vw,.78rem);line-height:1.25;white-space:normal;overflow-wrap:anywhere}
-      .content-layout{padding-bottom:42px}
-      .toc{padding:16px}
-      .toc ol{columns:1;padding-left:20px}
-      .blog-article{border-radius:14px;padding:18px 15px}
-      .blog-article h2{font-size:clamp(1.35rem,5.8vw,1.75rem);line-height:1.2;letter-spacing:-.02em;margin:34px 0 12px}
-      .blog-article h3{font-size:clamp(1.12rem,4.8vw,1.25rem);line-height:1.25;margin:22px 0 8px}
-      .blog-article p,.blog-article li{font-size:.96rem;line-height:1.65}
-      .note-box{padding:14px 15px}
-      .cost-grid{grid-template-columns:minmax(0,1fr);gap:10px}
-      .cost-card{min-width:0}
-      .cta-panel{padding:20px 16px}
-      .cta-panel .btn{display:flex;width:100%;max-width:100%;white-space:normal;text-align:center}
-      .faq{min-width:0}
-      .blog-article .faq h3{font-size:1rem}
-    }
-    @media(max-width:360px){
-      .blog-header-inner{gap:8px}
-      .blog-brand{flex-basis:125px;font-size:.76rem}
-      .site-header .blog-header-cta{padding:8px 9px;font-size:.66rem}
-      .blog-article{padding:16px 13px}
-      .blog-article h2{font-size:1.3rem}
-    }
-    @media(prefers-reduced-motion:reduce){.blog-hero .actions .btn:hover{transform:none}}
-
+@media(max-width:960px){
+  .content-layout{grid-template-columns:minmax(0,1fr);gap:22px;padding-top:32px;padding-bottom:56px}
+  .toc{position:static;width:100%}
+  .toc ol{columns:2;column-gap:28px}
+  .blog-article{padding:clamp(24px,4vw,34px)}
+}
+@media(max-width:760px){
+  .blog-hero{padding:clamp(34px,7vw,48px) 0 clamp(30px,6vw,40px)}
+  .blog-hero h1{max-width:100%;font-size:clamp(2rem,7.2vw,2.8rem);line-height:1.1;letter-spacing:-.035em}
+  .blog-hero .lead{max-width:100%;font-size:1rem;line-height:1.65}
+  .blog-hero .actions{align-items:stretch}
+  .blog-hero .actions .btn{width:100%;max-width:100%;white-space:normal;text-align:center}
+  .content-layout{gap:20px}
+}
+@media(max-width:520px){
+  /* Consistent 18px page gutters. Do not inherit the site's narrower 12px mobile gutter here. */
+  .blog-page .container,.content-layout{width:calc(100% - 36px)}
+  .blog-header-inner{gap:10px;flex-wrap:wrap;padding-block:10px;align-items:center}
+  .blog-brand{flex:1 1 135px;min-width:0;max-width:100%;font-size:clamp(.8rem,3.8vw,.95rem);line-height:1.2;white-space:normal}
+  .brand-mark{flex:0 0 30px;width:30px;height:30px}
+  .site-header .blog-header-cta{width:auto!important;flex:0 1 auto;max-width:100%;min-height:40px;padding:9px 11px;font-size:clamp(.68rem,3.1vw,.78rem);line-height:1.25;white-space:normal;overflow-wrap:normal}
+  .content-layout{padding-top:26px;padding-bottom:44px}
+  .toc{padding:18px}
+  .toc ol{columns:1;padding-left:20px}
+  .blog-article{border-radius:var(--radius,8px);padding:22px 20px}
+  .blog-article h2{font-size:clamp(1.45rem,5.4vw,1.8rem);line-height:1.2;letter-spacing:-.02em;margin:34px 0 12px}
+  .blog-article h3{font-size:1.15rem;line-height:1.3;margin:22px 0 8px}
+  .blog-article p,.blog-article li{font-size:.96rem;line-height:1.65}
+  .note-box{padding:15px 16px}
+  .cost-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .cost-card{padding:16px}
+  .cta-panel{padding:21px 18px}
+  .cta-panel .btn{display:flex;width:100%;max-width:100%;white-space:normal;text-align:center}
+  .faq h3{font-size:1rem}
+}
+@media(max-width:360px){
+  .blog-page .container,.content-layout{width:calc(100% - 32px)}
+  .blog-header-inner{gap:8px}
+  .blog-brand{flex-basis:122px;font-size:.76rem}
+  .site-header .blog-header-cta{padding:8px 9px;font-size:.66rem}
+  .blog-article{padding:18px 16px}
+}
+@media(prefers-reduced-motion:reduce){.blog-hero .actions .btn:hover{transform:none}}
 </style>
 </head>
 <body>
