@@ -342,6 +342,22 @@
   .blog-article{padding:18px 16px}
 }
 @media(prefers-reduced-motion:reduce){.blog-hero .actions .btn:hover{transform:none}}
+/* Article image — prevent stretching and squeezing */
+.blog-article figure {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 28px 0;
+}
+
+.blog-article figure img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: unset !important;
+}
 </style>
 </head>
 <body>
